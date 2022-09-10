@@ -1,5 +1,17 @@
 .area{
-    width: 100%;
+    width: 76vw;
     height: 70vh;
     background: #1C1C26;
+    float: right;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.videoStyle{
+    height: 90%;
+    width: 70%;
+    border: 1px solid white;
 }
