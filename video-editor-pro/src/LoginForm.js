@@ -1,13 +1,16 @@
 import styles from "./css/loginPage.module.css";
 
-function LoginForm() {
+function LoginForm(props) {
+
+    const {handleStatusChange} = props
+
     return (
         <>
         <div className={styles.fieldDiv}>
           <input placeholder="Username" className={styles.input}></input>
-          <input placeholder="Password" className={styles.input}></input>
-          <button className={styles.submit}>Submit</button>
-          <p>Don't have an account? Signup</p>
+          <input placeholder="Password" type='password' className={styles.input}></input>
+          <button className={styles.submit}>Login</button>
+          <p onClick={handleStatusChange}>Don't have an account? Signup</p>
         </div>
       </>
     )
