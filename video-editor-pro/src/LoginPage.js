@@ -8,7 +8,7 @@ function LoginPage()
 
     const [status, changestatus] = useState(true); //true for login
 
-    function handleStatusChange()
+    const handleStatusChange = () =>
     {
         changestatus(!status);
     }
