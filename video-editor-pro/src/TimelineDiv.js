@@ -1,9 +1,38 @@
-import timelinediv from './css/timelinediv.module.css'
+import styles from './css/timelinediv.module.css'
 
 function TimelineDiv()
 {
     return (
-        <div className={timelinediv.area}>
+        <div className={styles.area}>
+
+            <div className={styles.thumbnailsArea}>
+
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+                <div className={styles.thumbnails}></div>
+
+            </div>
             
         </div>
     )

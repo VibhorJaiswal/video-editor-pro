@@ -3,4 +3,42 @@
     height: 30vh;
     background: #2f2f41;
     float: right;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: scroll; */
 }
+
+.thumbnailsArea{
+
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 80px;
+    width: 100vw;
+    /* border: 1px solid white; */
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+
+.thumbnails{
+
+    height: 70px;
+    width: 120px;
+    border: 1px solid white;
+    display: inline-block;
+}
+
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.thumbnailsArea::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .thumbnailsArea {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
