@@ -4,3 +4,14 @@
     background: #272731;
     float: left;
 }
+
+.videoThumbnail{
+
+    height: 70px;
+    width: 120px;
+    border: 2px white solid;
+    margin-left: auto;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-right: auto;
+}
