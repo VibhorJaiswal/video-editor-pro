@@ -1,0 +1,60 @@
+.loginPage{
+    height: 100vh;
+    width: 100vw;
+
+    background: #1C1C26;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formdiv{
+
+    height: 20vw;
+    width: 30vw;
+    background: #252533;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    -moz-box-shadow: 0 0 10px rgb(0, 0, 0);
+    -webkit-box-shadow: 0 0 10px rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.fieldDiv{
+    text-align: center;
+    display:table-cell;
+    vertical-align:middle;
+}
+
+
+.input{
+    display: block;
+    height: 20px;
+    margin: 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: large;
+    margin: 30px;
+}
+
+
+.input:focus{
+    outline: 1px solid #dd0bcc;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+.submit{
+    width: 150px;
+    height: 50px;
+    background: #dd0bcc;
+    color: white;
+    border-radius: 50px;
+    font-size: large;
+    font-weight: bolder;
+}
