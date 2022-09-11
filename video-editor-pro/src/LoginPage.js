@@ -1,28 +1,63 @@
-import LoginForm from './LoginForm';
-import SignupFrom from './SignupForm.js';
-import styles from './css/loginPage.module.css'
-import { useState } from 'react';
+import LoginForm from "./LoginForm";
+import SignupFrom from "./SignupForm.js";
+import styles from "./css/loginPage.module.css";
+import { useState } from "react";
 
-function LoginPage()
-{
+function LoginPage() {
+  const [status, changestatus] = useState(true); //true for login
 
-    const [status, changestatus] = useState(true); //true for login
+  const [username, changeusername] = useState("");
+  const [password, changepassword] = useState("");
 
-    const handleStatusChange = () =>
-    {
-        changestatus(!status);
-    }
+  const handleUsername = (e) => {
+    // console.log(e.target.value);
+    changeusername(e.target.value);
+  };
 
-    return (
-        <div className={styles.loginPage}>
-            <div className={styles.formdiv}>
-            {status && <LoginForm handleStatusChange={handleStatusChange}/>}
-            {!status && <SignupFrom handleStatusChange={handleStatusChange}/>}
-            </div>
+  const handlePassword = (e) => {
+    // console.log(e.target.value);
+    changepassword(e.target.value);
+  };
 
-        </div>
+  const handleStatusChange = () => {
+    changestatus(!status);
+  };
 
-    )
+  const handleLogin = () => {};
+
+  const handleSignup = () => {
+    // console.log("username: ", username);
+    // console.log("password: ", password);
+
+    const data = { username, password };
+
+    fetch("https://example.com/profile", {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
+  const methods = { handlePassword, handleUsername, handleStatusChange };
+  return (
+    <div className={styles.loginPage}>
+      <div className={styles.formdiv}>
+        {status && <LoginForm methods={methods} />}
+        {!status && (
+          <SignupFrom methods={methods} handleSignup={handleSignup} />
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default LoginPage;

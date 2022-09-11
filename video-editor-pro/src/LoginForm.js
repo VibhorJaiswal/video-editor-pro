@@ -2,7 +2,7 @@ import styles from "./css/loginPage.module.css";
 
 function LoginForm(props) {
 
-    const {handleStatusChange} = props
+    const {handleStatusChange, handlePassword, handleUsername} = props.methods;
 
     return (
         <>
