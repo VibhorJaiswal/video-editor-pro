@@ -26,26 +26,31 @@ function LoginPage() {
   const handleLogin = () => {};
 
   const handleSignup = () => {
-    // console.log("username: ", username);
-    // console.log("password: ", password);
 
     const data = { username, password };
 
-    fetch("https://example.com/profile", {
-      method: "POST", // or 'PUT'
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
+    console.log(data);
+
+  //   fetch("http://localhost:1234/login", {
+  //     method: "POST", // or 'PUT'
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(data),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("Success:", data);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Custom ERROR:", error);
+  //     });
+  
+  fetch("http://localhost:1234/test")
+  .then((res) => res.json())
+  .then(data => console.log('data is this: ', data));
+  
+};
 
   const methods = { handlePassword, handleUsername, handleStatusChange };
   return (
