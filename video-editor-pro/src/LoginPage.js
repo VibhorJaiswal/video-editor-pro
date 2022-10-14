@@ -29,26 +29,25 @@ function LoginPage() {
 
     const data = { username, password };
 
-    console.log(data);
+    // console.log(data);
 
-  //   fetch("http://localhost:1234/login", {
-  //     method: "POST", // or 'PUT'
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(data),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log("Success:", data);
-  //     })
-  //     .catch((error) => {
-  //       console.log("Custom ERROR:", error);
-  //     });
-  
-  fetch("http://localhost:1234/test")
-  .then((res) => res.json())
-  .then(data => console.log('data is this: ', data));
+    fetch('http://localhost:8080/')
+    .then((res) => res.json())
+    .then((d) => console.log(d));
+
+    // fetch("http://localhost:8080/login", {
+    //   method: "POST", // or 'PUT'
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     'Accept': 'application/json'
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    //   .then((res) => res.json())
+    //   .then((d) => {console.log(d)})
+      // .catch((error) => {
+      //   console.log("Custom ERROR:", error);
+      // });
   
 };
 
