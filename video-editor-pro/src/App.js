@@ -20,11 +20,11 @@ function App() {
       {!currentPage && <LoginPage methods={changeCurrentPage} handleCurrentPage={handleCurrentPage} />}
       {currentPage && (
         <>
-          <ToolsDiv />
-          <AllVideosDiv />
-          <CurrentVideoDiv />
-          <TimelineDiv />
-        </>
+      <ToolsDiv />
+      <AllVideosDiv />
+      <CurrentVideoDiv />
+      <TimelineDiv />
+    </>
       )}
     </>
   );
