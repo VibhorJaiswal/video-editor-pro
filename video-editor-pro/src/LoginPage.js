@@ -95,16 +95,6 @@ function LoginPage(props) {
         {
           changNotifMsg("Registered!");        
           changeNotifType("success");
-
-          const urlCreateUser = 'https://5000-vibhorjaisw-videoeditor-4z6335pnuc7.ws-us71.gitpod.io/createnewuser';
-          fetch(urlCreateUser, {
-              method: "POST", // or 'PUT'
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({username}),
-            })
-            .then((data) => {console.log(data)});
           changeShowNotif(true);  
         }
       })

@@ -8,7 +8,7 @@ import { useEffect } from "react";
 
 function App() {
   const [currentPage, changeCurrentPage] = useState(true); //false for login page
-  const [uploadedVideo, handleUploadedVideo] = useState({});
+  const [uploadedVideo, changeUploadedVideo] = useState({});
   const [username, changeusername] = useState("baman");
   const [editType, changeEditType] = useState('none');
   const [currentVideo, changeCurrentVideo] = useState('')
@@ -24,7 +24,7 @@ function App() {
   };
 
   const handleUploadVideo = (e) => {
-    handleUploadedVideo(e.target.files[0]);
+    changeUploadedVideo(e.target.files[0]);;
   }
 
   const handleEditType = (e) => {
@@ -36,7 +36,7 @@ function App() {
 
     if(uploadedVideo === {}) return; 
 
-      const url = "https://5000-vibhorjaisw-videoeditor-4z6335pnuc7.ws-us71.gitpod.io/upload";
+      const url = "https://5000-vibhorjaisw-videoeditor-1846ju1x2au.ws-us71.gitpod.io/upload";
 
       // console.log('upload video: ',uploadedVideo);
 
@@ -55,6 +55,20 @@ function App() {
 
   }, [uploadedVideo]);
 
+
+
+  //Temp function for development. To be removed.
+  useEffect(() => {
+    const urlCreateUser = 'https://5000-vibhorjaisw-videoeditor-1846ju1x2au.ws-us71.gitpod.io/createnewuser';
+    fetch(urlCreateUser, {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({username}),
+      })
+      .then((data) => {console.log(data)});
+  })
 
 
   //To perform editing
