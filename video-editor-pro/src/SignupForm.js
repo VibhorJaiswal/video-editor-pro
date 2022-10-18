@@ -8,7 +8,7 @@ function SignupFrom(props)
         <>
         <div className={styles.fieldDiv}>
           <input placeholder="Username" className={styles.input} onChange={handleUsername}></input>
-          <input placeholder="Password" className={styles.input} onChange={handlePassword}></input>
+          <input placeholder="Password" type="password" className={styles.input} onChange={handlePassword}></input>
           <button className={styles.submit} onClick={handleSignup}>Signup</button>
           <p onClick={handleStatusChange}>Already have an account? Login</p>
         </div>

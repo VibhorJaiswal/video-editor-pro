@@ -14,7 +14,7 @@ import MuiAlert from '@mui/material/Alert';
 function LoginPage(props) {
 
   const [status, changestatus] = useState(true); //true for login
-  const [username, changeusername] = useState("");
+  const {handleUsername, username} = props.methods;
   const [password, changepassword] = useState("");
   const [showNotif, changeShowNotif] = useState(false);
   const [notifMsg, changNotifMsg] = useState("");
@@ -27,11 +27,6 @@ function LoginPage(props) {
   const handleShowNotif = () => {
     changeShowNotif(!showNotif);
   }
-
-  const handleUsername = (e) => {
-    // console.log(e.target.value);
-    changeusername(e.target.value);
-  };
 
   const handlePassword = (e) => {
     // console.log(e.target.value);
@@ -100,6 +95,16 @@ function LoginPage(props) {
         {
           changNotifMsg("Registered!");        
           changeNotifType("success");
+
+          const urlCreateUser = 'https://5000-vibhorjaisw-videoeditor-4z6335pnuc7.ws-us71.gitpod.io/createnewuser';
+          fetch(urlCreateUser, {
+              method: "POST", // or 'PUT'
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({username}),
+            })
+            .then((data) => {console.log(data)});
           changeShowNotif(true);  
         }
       })
