@@ -41,6 +41,7 @@ function LoginPage(props) {
     const data = { username, password };
 
     // console.log(data);
+    handleCurrentPage();
 
     fetch("http://localhost:8080/login", {
       method: "POST", // or 'PUT'
