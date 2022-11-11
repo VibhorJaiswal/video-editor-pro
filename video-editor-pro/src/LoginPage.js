@@ -13,7 +13,7 @@ import MuiAlert from '@mui/material/Alert';
 
 function LoginPage(props) {
 
-  const [status, changestatus] = useState(true); //true for login
+  const [status, changestatus] = useState(false); //true for login
   const {handleUsername, username} = props.methods;
   const [password, changepassword] = useState("");
   const [showNotif, changeShowNotif] = useState(false);
