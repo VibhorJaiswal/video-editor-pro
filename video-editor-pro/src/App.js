@@ -10,7 +10,7 @@ function App() {
   const universalUrl =
     "https://5000-vibhorjaisw-videoeditor-fz8qdtoc0iv.ws-us71.gitpod.io";
 
-  const [currentPage, changeCurrentPage] = useState(false); //false for login page
+  const [currentPage, changeCurrentPage] = useState(true); //false for login page
   const [uploadedVideo, changeUploadedVideo] = useState({});
   const [username, changeusername] = useState("baman");
   const [editType, changeEditType] = useState("none");
