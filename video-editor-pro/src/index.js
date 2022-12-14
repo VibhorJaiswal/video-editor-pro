@@ -4,5 +4,4 @@ import App from './App.js'
 import LoginPage from "./LoginPage.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<LoginPage />);
 root.render(<App />);

@@ -1,6 +1,7 @@
 import toolsdiv from "./css/toolsdiv.module.css";
 import { MdOutlineInvertColors, MdDriveFolderUpload } from "react-icons/md";
 import { BiCut } from "react-icons/bi";
+import {GiSave} from "react-icons/gi"
 import { AiOutlineRotateRight, AiOutlineMergeCells } from "react-icons/ai";
 
 function ToolsDiv(props) {
@@ -37,11 +38,17 @@ function ToolsDiv(props) {
 
       {/* upload button */}
       <button className={toolsdiv.toolsButton}>
+        <GiSave size={30} color="white" />
+        <p>Save Video</p>
+      </button>
+
+      <div  className={toolsdiv.toolsButton}>
+      <label for="file-upload">
         <MdDriveFolderUpload size={30} color="white" />
         <p>Upload Video</p>
-      </button>
-      
-      <input className={toolsdiv.toolsButton} type="file" accept="video/*" onChange={handleUploadVideo}/>
+        <input id="file-upload" style={{display: "none"}}  type="file" accept="video/*" onChange={handleUploadVideo}/>
+      </label>      
+      </div>
     </div>
   );
 }
