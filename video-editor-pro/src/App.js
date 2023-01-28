@@ -8,13 +8,14 @@ import { useEffect } from "react";
 
 function App() {
   const universalUrl =
-    "https://5000-vibhorjaisw-videoeditor-fz8qdtoc0iv.ws-us71.gitpod.io";
+    "https://5000-vibhorjaisw-videoeditor-0y2zqq7rkft.ws-us84.gitpod.io";
 
   const [currentPage, changeCurrentPage] = useState(true); //false for login page
   const [uploadedVideo, changeUploadedVideo] = useState({});
   const [username, changeusername] = useState("baman");
   const [editType, changeEditType] = useState("none");
   const [currentVideo, changeCurrentVideo] = useState("");
+  const [editedVideoName, changeEditedVideo] = useState("");
 
   const handleUsername = (e) => {
     // console.log(e.target.value);
@@ -31,7 +32,31 @@ function App() {
   };
 
   const handleEditType = (e) => {
+    console.log(e);
     changeEditType(e);
+  };
+
+  const handleEditedVideo = (e) => {
+    changeEditedVideo(e);
+  };
+
+  const handleSave = () => {
+    console.log("saving to s3");
+    const url = `${universalUrl}/saveToS3`;
+    const data = {
+      username,
+      editedVideoName,
+    };
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => {
+      console.log(res.status);
+    });
   };
 
   //To upload video to server.
@@ -55,6 +80,7 @@ function App() {
       .then((res) => {
         console.log(res);
         changeCurrentVideo(uploadedVideo.name);
+        changeEditedVideo(uploadedVideo.name);
       });
   }, [uploadedVideo]);
 
@@ -78,7 +104,7 @@ function App() {
 
   //To perform editing
   useEffect(() => {
-    if (editType != "none") {
+    if (editType !== "none") {
       console.log("performing: ", editType);
 
       const data = {
@@ -100,12 +126,17 @@ function App() {
           ".mp4",
           ""
         )}_output.mp4`;
+        let editedVideoNameLocal = `${currentVideo.replace(
+          ".mp4",
+          ""
+        )}_output.mp4`;
         videoPlayer.src = videoUrl;
+        handleEditedVideo(editedVideoNameLocal);
       });
     }
   }, [editType]);
 
-  const toolsDivMethods = { handleUploadVideo, handleEditType };
+  const toolsDivMethods = { handleUploadVideo, handleEditType, handleSave };
   const loginPageMethods = { changeCurrentPage, handleUsername, username };
 
   return (

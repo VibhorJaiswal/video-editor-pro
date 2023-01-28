@@ -6,7 +6,7 @@ import { AiOutlineRotateRight, AiOutlineMergeCells } from "react-icons/ai";
 
 function ToolsDiv(props) {
 
-  const {handleUploadVideo, handleEditType} = props.methods;
+  const {handleUploadVideo, handleEditType, handleSave} = props.methods;
 
 
   return (
@@ -37,7 +37,7 @@ function ToolsDiv(props) {
 
 
       {/* upload button */}
-      <button className={toolsdiv.toolsButton}>
+      <button className={toolsdiv.toolsButton} onClick={handleSave}>
         <GiSave size={30} color="white" />
         <p>Save Video</p>
       </button>
