@@ -45,7 +45,7 @@ function App() {
     const url = `${universalUrl}/saveToS3`;
     const data = {
       username,
-      editedVideoName,
+      filename: editedVideoName,
     };
 
     fetch(url, {
